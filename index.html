@@ -51,7 +51,7 @@
         let song = document.getElementById("song");
         let ctrlIcon = document.getElementById("ctrlIcon");
         let volumeSlider = document.getElementById("volume");
-        let muteIcon = document.getElementById("muteIcon");
+        
 
         song.onloadedmetadata = function () {
             progress.max = song.duration;
@@ -88,6 +88,9 @@
             ctrlIcon.classList.add("fa-play");
             progress.value = 0;  // Reset progress bar
         });
+        volumeSlider.oninput = function () {
+            song.volume = volumeSlider.value;
+        };
 
 
     </script>
